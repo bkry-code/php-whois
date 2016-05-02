@@ -1,6 +1,6 @@
 #PHP Whois API
 
-Realtime PHP library for socket requests and parsing responses from WHOIS servers.
+Realtime PHP library for a socket requests and response parsing from WHOIS servers.
 
 
 ##Requirements
