@@ -6,7 +6,7 @@ Realtime PHP library for socket requests and parsing responses from WHOIS server
 ##Requirements
 
 PHP >= 5.4
-PECL __intl__ module
+PECL __intl__
 
 
 ##Usage
@@ -45,18 +45,18 @@ echo $info->domainName . " expiring at: " . date("d.m.Y H:i:s", $info->expiratio
 var_dump($info);
 
 ```
-_It will return __null__ if domain info not loaded or domain not found or not supported by current whois servers._
+It will return __null__ if domain info not loaded or domain not found or not supported by current whois servers.
 
 Now you have whois info object with important data fields:
-- __domainName__  _string_  Real (punycode) domain name.
-- __domainNameUnicode__  _string_  Domain name coverted to unicode.
-- __nameServers__  _string[]_  List of name servers.
-- __creationDate__  _int_  Unixtime creation date.
-- __expirationDate__  _int_  Unixtime expiration date.
-- __states__  _string[]_  Status list in upper-case.
-- __owner__  _string_  Owner (company) name.
-- __registrar__  _string_  Registrar name.
+- __domainName__  Real (punycode) domain name.
+- __domainNameUnicode__  Domain name coverted to unicode.
+- __nameServers__  List of name servers.
+- __creationDate__  Unixtime creation date.
+- __expirationDate__  Unixtime expiration date.
+- __states__  Status list in upper-case.
+- __owner__  Owner (company) name.
+- __registrar__  Registrar name.
 - response  _\iodev\whois\WhoisResponse_ object contains original whois response data: raw text and parsed grouped key-value pairs.
 
 
-See _example.php_ for more details
+See __example.php__ for more details
