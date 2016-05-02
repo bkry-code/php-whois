@@ -56,7 +56,7 @@ Now you have whois info object with important data fields:
 - __states__  Status list in upper-case.
 - __owner__  Owner (company) name.
 - __registrar__  Registrar name.
-- response  _\iodev\whois\WhoisResponse_ object contains original whois response data: raw text and parsed grouped key-value pairs.
+- __response__  \iodev\whois\WhoisResponse object contains original whois response data: raw text and parsed grouped key-value pairs.
 
 
 See __example.php__ for more details
