@@ -47,7 +47,7 @@ var_dump($info);
 ```
 It will return __null__ if domain info not loaded or domain not found or not supported by current whois servers.
 
-Now you have whois info object with important data fields:
+Now you have __\iodev\whois\WhoisInfo__ object with important data fields:
 - __domainName__  Real (punycode) domain name.
 - __domainNameUnicode__  Domain name coverted to unicode.
 - __nameServers__  List of name servers.
