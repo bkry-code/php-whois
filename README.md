@@ -4,9 +4,9 @@ Realtime PHP library for a socket requests and response parsing from WHOIS serve
 
 
 ##Requirements
-
 PHP >= 5.4
-PECL __intl__
+Modules:
+- intl
 
 
 ##Usage
