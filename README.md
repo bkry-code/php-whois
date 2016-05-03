@@ -1,6 +1,6 @@
 #PHP Whois API
 
-Realtime PHP library for a socket requests and response parsing from WHOIS servers.
+PHP library requesting (via socket port 43) and parsing real WHOIS service responses.
 
 
 ##Requirements
@@ -12,7 +12,7 @@ Modules:
 
 ##Usage
 
-Create default instance for top-level domains: .com .net .ru .рф
+Create default instance for top-level domains: __.com .net .ru .рф__
 
 ```
 $whois = \iodev\whois\Whois::create();
@@ -35,8 +35,7 @@ $whois->addServer($edu);
 
 ```
 
-Loading domain info
-
+Loading domain info:
 ```
 /* @var $info \iodev\whois\WhoisInfo */
 $info = $whois->loadInfo("google.com");
@@ -47,6 +46,15 @@ var_dump($info);
 
 ```
 It will return __null__ if domain info not loaded or domain not found or not supported by current whois servers.
+
+Or you can get original whois text response:
+```
+$info = $whois->loadInfo("google.com");
+$response = $info->response;
+
+echo "WHOIS response for '{$response->requestedDomain}':\n{$response->content}";
+
+```
 
 Now you have __\iodev\whois\WhoisInfo__ object with important data fields:
 - __domainName__  Real (punycode) domain name.
