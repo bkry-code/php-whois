@@ -16,7 +16,6 @@ Create default instance for top-level domains: __.com .net .ru .рф__
 
 ```
 $whois = \iodev\whois\Whois::create();
-
 ```
 If you want add special whois server
 
@@ -32,7 +31,6 @@ $edu = \iodev\whois\WhoisServer::createDistributed(".edu", "whois.crsnic.net", n
 
 // Attaching
 $whois->addServer($edu);
-
 ```
 
 Loading domain info:
@@ -43,7 +41,6 @@ $info = $whois->loadInfo("google.com");
 echo $info->domainName . " expiring at: " . date("d.m.Y H:i:s", $info->expirationDate);
 
 var_dump($info);
-
 ```
 It will return __null__ if domain info not loaded or domain not found or not supported by current whois servers.
 
@@ -53,7 +50,6 @@ $info = $whois->loadInfo("google.com");
 $response = $info->response;
 
 echo "WHOIS response for '{$response->requestedDomain}':\n{$response->content}";
-
 ```
 
 Now you have __\iodev\whois\WhoisInfo__ object with important data fields:
