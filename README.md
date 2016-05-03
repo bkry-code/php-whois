@@ -31,7 +31,6 @@ $whois->addServer($edu);
 
 Loading domain info:
 ```
-/* @var $info \iodev\whois\WhoisInfo */
 $info = $whois->loadInfo("google.com");
 
 echo $info->domainName . " expiring at: " . date("d.m.Y H:i:s", $info->expirationDate);
