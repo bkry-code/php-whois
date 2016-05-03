@@ -1,7 +1,5 @@
 #PHP Whois API
-
 PHP library requesting (via socket port 43) and parsing real WHOIS service responses.
-
 
 ##Requirements
 PHP >= 5.4
@@ -9,16 +7,14 @@ PHP >= 5.4
 Modules:
 - intl
 
-
 ##Usage
 
-Create default instance for top-level domains: __.com .net .ru .рф__
-
+Create default instance for top-level domains __.com .net .ru .рф__
 ```
 $whois = \iodev\whois\Whois::create();
 ```
-If you want add special whois server
 
+If you want add special whois server:
 ```
 $edu = new \iodev\whois\WhoisServer();
 $edu->isCentralized = false;
@@ -52,16 +48,16 @@ $response = $info->response;
 echo "WHOIS response for '{$response->requestedDomain}':\n{$response->content}";
 ```
 
-Now you have __\iodev\whois\WhoisInfo__ object with important data fields:
-- __domainName__  Real (punycode) domain name.
-- __domainNameUnicode__  Domain name coverted to unicode.
-- __nameServers__  List of name servers.
-- __creationDate__  Unixtime creation date.
-- __expirationDate__  Unixtime expiration date.
-- __states__  Status list in upper-case.
-- __owner__  Owner (company) name.
-- __registrar__  Registrar name.
-- __response__  \iodev\whois\WhoisResponse object contains original whois response data: raw text and parsed grouped key-value pairs.
+Now in __$info__ you have a __\iodev\whois\WhoisInfo__ object with important data fields:
+- domainName — Real (punycode) domain name.
+- domainNameUnicode — Domain name coverted to unicode.
+- nameServers — List of name servers.
+- creationDate — Unixtime creation date.
+- expirationDate — Unixtime expiration date.
+- states — Status list in upper-case.
+- owner — Owner (company) name.
+- registrar — Registrar name.
+- response — __\iodev\whois\WhoisResponse__ object contains original whois response data: raw text and parsed grouped key-value pairs.
 
 
 See __example.php__ for more details
