@@ -48,15 +48,15 @@ echo "WHOIS response for '{$response->requestedDomain}':\n{$response->content}";
 ```
 
 Now in __$info__ you have a __\iodev\whois\WhoisInfo__ object with important data fields:
-- domainName — Real (punycode) domain name.
-- domainNameUnicode — Domain name coverted to unicode.
+- domainName — Real domain name (punycode).
+- domainNameUnicode — Domain name in unicode (decoded punycode).
 - nameServers — List of name servers.
 - creationDate — Unixtime creation date.
 - expirationDate — Unixtime expiration date.
 - states — Status list in upper-case.
 - owner — Owner (company) name.
 - registrar — Registrar name.
-- response — __\iodev\whois\WhoisResponse__ object contains original whois response data: raw text and parsed grouped key-value pairs.
+- response — __\iodev\whois\WhoisResponse__ object containing original whois response text and parsed grouped key-value pairs.
 
 
 See __example.php__ for more details
