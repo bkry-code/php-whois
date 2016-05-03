@@ -47,7 +47,7 @@ $response = $info->response;
 echo "WHOIS response for '{$response->requestedDomain}':\n{$response->content}";
 ```
 
-Now in __$info__ you have a __\iodev\whois\WhoisInfo__ object with important data fields:
+Now __$info__ is __\iodev\whois\WhoisInfo__ object with important data fields:
 - domainName — Real domain name (punycode).
 - domainNameUnicode — Domain name in unicode (decoded punycode).
 - nameServers — List of name servers.
