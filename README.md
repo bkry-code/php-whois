@@ -11,19 +11,24 @@ Modules:
 
 Create default instance for top-level domains __.com .net .ru .рф__
 ```
-$whois = \iodev\whois\Whois::create();
+use iodev\whois\Whois;
+
+$whois = Whois::create();
 ```
 
 If you want add special whois server:
 ```
-$edu = new \iodev\whois\WhoisServer();
+use iodev\whois\WhoisServer;
+use iodev\whois\parsers\ComInfoParser;
+
+$edu = new WhoisServer();
 $edu->isCentralized = false;
 $edu->topLevelDomain = ".edu";
 $edu->host = "whois.crsnic.net";
 $edu->infoParser = new ComInfoParser();
 
 // Or via static factory method
-$edu = \iodev\whois\WhoisServer::createDistributed(".edu", "whois.crsnic.net", new ComInfoParser());
+$edu = WhoisServer::createDistributed(".edu", "whois.crsnic.net", new ComInfoParser());
 
 // Attaching
 $whois->addServer($edu);
