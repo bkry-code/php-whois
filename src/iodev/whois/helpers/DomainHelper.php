@@ -25,7 +25,11 @@ class DomainHelper
      */
     public static function toAscii( $domain )
     {
-        return idn_to_ascii(self::correct($domain));
+        $cor = self::correct($domain);
+        if (function_exists("idn_to_ascii")) {
+            return idn_to_ascii($cor);
+        }
+        return $cor;
     }
     
     /**
@@ -34,7 +38,11 @@ class DomainHelper
      */
     public static function toUnicode( $domain )
     {
-        return idn_to_utf8(self::correct($domain));
+        $cor = self::correct($domain);
+        if (function_exists("idn_to_utf8")) {
+            return idn_to_utf8($cor);
+        }
+        return $cor;
     }
     
     /**
